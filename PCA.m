@@ -59,6 +59,7 @@ resid = data.btc - theoretical_ret;
 
 %平滑處理
 signal = (movmean(resid, 50) - movmean(resid, 100)) / std(movmean(resid, 100));
+%signal = (resid - mean(resid)) / std(resid);
 
 figure;
 set(gcf, 'Position', [500, 500, 1500, 500]);
